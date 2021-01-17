@@ -16,6 +16,8 @@ def dfs(self, nums, path, res):
     for i in xrange(len(nums)):
         self.dfs(nums[:i]+nums[i+1:], path+[nums[i]], res)
 
+
+
 # Insert the first number anywhere in any permutation of the remaining numbers.
 def permute(self, nums):
     return nums and [p[:i] + [nums[0]] + p[i:]

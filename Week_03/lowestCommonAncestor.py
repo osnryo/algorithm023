@@ -4,10 +4,15 @@
 """
 
 def lowestCommonAncestor(self, root, p, q):
+    # 终止条件
     if root in (None, p, q): return root
+    # 在左右子树中递归寻找p、q
     left, right = (self.lowestCommonAncestor(kid, p, q)
                    for kid in (root.left, root.right))
+    # 只有一个子树时，返回
     return root if left and right else left or right
+
+
 
 # 官方答案
 class Solution:
